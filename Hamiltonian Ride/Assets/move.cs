@@ -45,6 +45,6 @@ public class move : MonoBehaviour
 
     private void MovePlayer()
     {
-        rb2d.velocity = transform.right * Mathf.Clamp01(_verticalInput) * movementSpeed;
+        rb2d.velocity = transform.up * Mathf.Clamp01(_verticalInput) * movementSpeed;
     }
 }
