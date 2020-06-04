@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4857814563785795288}
   - component: {fileID: 41865365184012144}
-  - component: {fileID: 8949207549762133154}
   - component: {fileID: -7803661056335570164}
+  - component: {fileID: -2721182415127618919}
   m_Layer: 0
   m_Name: house
   m_TagString: Vertex
@@ -83,24 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &8949207549762133154
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7965093938395847813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0, y: 0}
-  - {x: 0, y: -4}
 --- !u!114 &-7803661056335570164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,3 +95,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb569c4e742559646b192b41ab643d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+--- !u!58 &-2721182415127618919
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7965093938395847813}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.8
