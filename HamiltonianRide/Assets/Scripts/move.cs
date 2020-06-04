@@ -10,6 +10,8 @@ public class move : MonoBehaviour
     private float _verticalInput = 0;
     public int movementSpeed = 0;
     public int rotationSpeed = 0;
+    [SerializeField]
+    GameManager gm;
 
     Rigidbody2D rb2d;
     void Start()
@@ -19,6 +21,14 @@ public class move : MonoBehaviour
 
     void Update()
     {
+        if (gm.GetIsGameOver())
+        {
+            movementSpeed = 0;
+            rotationSpeed = 0;
+            rb2d.velocity = Vector2.zero;
+            return;
+        }
+
         GetPlayerInput();
 
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7202602923882488637}
   - component: {fileID: 7309983591867335249}
   m_Layer: 0
-  m_Name: New Sprite 6
+  m_Name: Road_Tile_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d96b5eac56793ce4a8c2f05ec8a67496, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0da1bb75100f0fe4b8f6d9537dd8426f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 383878216336190956}
   - component: {fileID: 276198825119566976}
   m_Layer: 0
-  m_Name: New Sprite 4
+  m_Name: Road_Tile_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
