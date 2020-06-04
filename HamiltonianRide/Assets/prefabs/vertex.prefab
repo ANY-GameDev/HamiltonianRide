@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4857814563785795288}
   - component: {fileID: 41865365184012144}
   - component: {fileID: -7803661056335570164}
-  - component: {fileID: -3449464300304255477}
+  - component: {fileID: 4856877572449789076}
   m_Layer: 8
   m_Name: vertex
   m_TagString: Vertex
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7965093938395847813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.486, y: 31.966, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0.486, y: 31.966, z: -10}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b1df95a6981a2fe488de9e7a6052a0ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30f1a4f5d69225a47859285da2c9d716, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb569c4e742559646b192b41ab643d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newSprite: {fileID: 21300000, guid: da095a4e288eebc4a8c22e4b95e3e919, type: 3}
   gm: {fileID: 0}
---- !u!61 &-3449464300304255477
-BoxCollider2D:
+--- !u!60 &4856877572449789076
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,19 +107,29 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
+    oldSize: {x: 2.81, y: 2.17}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 1
+  m_Points:
+    m_Paths:
+    - - {x: 0.565, y: 1.0849999}
+      - {x: -0.565, y: 1.0849999}
+      - {x: -0.895, y: 0.515}
+      - {x: -1.405, y: -0.505}
+      - {x: -1.405, y: -0.66499996}
+      - {x: -1.2049999, y: -0.995}
+      - {x: -1.1949999, y: -1.0849999}
+      - {x: 1.2049999, y: -1.0849999}
+      - {x: 1.285, y: -0.695}
+      - {x: 1.405, y: -0.625}
+      - {x: 1.405, y: -0.345}

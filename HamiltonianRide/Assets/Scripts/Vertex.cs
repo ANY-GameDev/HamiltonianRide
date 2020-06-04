@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Vertex : MonoBehaviour
 {
+    SpriteRenderer SR;
+    public Sprite newSprite;
     bool isMarked;
     [SerializeField]
     GameManager gm;
     void Start()
     {
+        SR = GetComponent<SpriteRenderer>();
         isMarked = false;
     }
 
@@ -16,6 +20,11 @@ public class Vertex : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public bool getMark()
+    {
+        return isMarked;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,10 +38,16 @@ public class Vertex : MonoBehaviour
             else
             {
                 isMarked = true;
+                changeSprite();
                 gm.UpdateNumberOfVertices();
                 Debug.Log("Reached vertex");
 
             }
         }
+    }
+
+    void changeSprite()
+    {
+        SR.sprite = newSprite;
     }
 }
