@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class move : MonoBehaviour
 {
-    private float _horizontalInput = 0;
-    private float _verticalInput = 0;
+    private float _horizontalInput;
+    private float _verticalInput;
     public int movementSpeed = 0;
     public int rotationSpeed = 0;
     [SerializeField]
@@ -16,6 +16,8 @@ public class move : MonoBehaviour
     Rigidbody2D rb2d;
     void Start()
     {
+        _horizontalInput = 0;
+        _verticalInput = 0;
         rb2d = GetComponent<Rigidbody2D>();
     }
 
