@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 enum OverReason
 {
@@ -15,16 +17,32 @@ public class GameManager : MonoBehaviour
     int numberOfVertices;
     OverReason overReason;
     bool isGameOver;
-    [SerializeField]
     GameObject gameOverPanel;
     Dictionary<OverReason, string> reason2msg;
 
     void Start()
     {
+        InitLevel();
         Initreason2msg();
+
+    }
+
+    private void InitLevel()
+    {
         isGameOver = false;
-        gameOverPanel.SetActive(false);
+        foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
+        {
+            if (go.tag == "GameOverPanel")
+            {
+                gameOverPanel = go;
+            }
+        }
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
         numberOfVertices = GameObject.FindGameObjectsWithTag("Vertex").Length;
+
     }
 
     void Update()
@@ -48,7 +66,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     public void UpdateNumberOfVertices()
     {
         numberOfVertices--;
@@ -64,11 +81,29 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         overReason = (OverReason)reason;
         gameOverPanel.GetComponentInChildren<Text>().text = reason2msg[overReason];
+        if (overReason == OverReason.won)
+        {
+            Invoke("NextLevel", 2);
+        }
+        else
+        {
+            Invoke("Restart", 2);
+        }
         isGameOver = true;
     }
 
     public bool GetIsGameOver()
     {
         return isGameOver;
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

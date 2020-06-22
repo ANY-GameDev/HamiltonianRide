@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Vertex
+  - GameManager
+  - AudioManager
+  - GameOverPanel
+  - Map
+  - HintMap
   layers:
   - Default
   - TransparentFX

@@ -13,12 +13,15 @@ public class Heart : MonoBehaviour
     void Start()
     {
         Transform t = GetComponent<Transform>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gm.GetIsGameOver()) return;
+
         transform.localScale = new Vector3(transform.localScale.x + speed, transform.localScale.y + speed, transform.localScale.z);
         if ((Mathf.Abs(transform.localScale.x) < -400f) && ((transform.localScale.x) < -200f) && (speed > 0f))
             speed = 0.001f;

@@ -19,6 +19,7 @@ public class move : MonoBehaviour
         _horizontalInput = 0;
         _verticalInput = 0;
         rb2d = GetComponent<Rigidbody2D>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Update()

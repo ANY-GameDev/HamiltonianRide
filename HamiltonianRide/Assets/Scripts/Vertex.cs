@@ -13,6 +13,7 @@ public class Vertex : MonoBehaviour
     void Start()
     {
         SR = GetComponent<SpriteRenderer>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         isMarked = false;
     }
 
