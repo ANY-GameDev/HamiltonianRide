@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 enum OverReason
 {
     lostCovid,
@@ -14,6 +13,12 @@ enum OverReason
 }
 public class GameManager : MonoBehaviour
 {
+    float score;
+    [SerializeField]
+    Text scoreText;
+    int scoreMultiplier;
+    int additionalScore = 25;
+    int vertexScore = 100;
     int numberOfVertices;
     OverReason overReason;
     bool isGameOver;
@@ -29,12 +34,16 @@ public class GameManager : MonoBehaviour
 
     private void InitLevel()
     {
+        score = 0;
+        scoreMultiplier = 0;
         isGameOver = false;
+        scoreText.text = "Score: " + (score + GlobalControl.Instance.GetScore());
         foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
         {
             if (go.tag == "GameOverPanel")
             {
                 gameOverPanel = go;
+                Debug.Log("here");
             }
         }
         if (gameOverPanel != null)
@@ -69,6 +78,8 @@ public class GameManager : MonoBehaviour
     public void UpdateNumberOfVertices()
     {
         numberOfVertices--;
+        score += vertexScore + additionalScore * scoreMultiplier++;
+        scoreText.text = "Score: " + (score + GlobalControl.Instance.GetScore());
         if (numberOfVertices <= 0)
         {
             overReason = OverReason.won;
@@ -99,11 +110,13 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {
+        GlobalControl.Instance.SetScore(-100);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     void NextLevel()
     {
+        GlobalControl.Instance.SetScore(score);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

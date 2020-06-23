@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb569c4e742559646b192b41ab643d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: da095a4e288eebc4a8c22e4b95e3e919, type: 3}
+  newSprite: {fileID: 21300000, guid: b404e33e0df16004588c47f84cb57011, type: 3}
   gm: {fileID: 0}
 --- !u!68 &-169322828385379516
 EdgeCollider2D:

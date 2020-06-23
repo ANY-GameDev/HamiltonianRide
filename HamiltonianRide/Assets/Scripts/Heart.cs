@@ -20,7 +20,7 @@ public class Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.GetIsGameOver()) return;
+        if (gm.GetIsGameOver() || PauseMenu.gameIsPaused) return;
 
         transform.localScale = new Vector3(transform.localScale.x + speed, transform.localScale.y + speed, transform.localScale.z);
         if ((Mathf.Abs(transform.localScale.x) < -400f) && ((transform.localScale.x) < -200f) && (speed > 0f))
